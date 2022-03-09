@@ -6,14 +6,31 @@
 <html lang="en">
  
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Kronos Games</title>
+
+    <style type="text/css">
+      .ui-autocomplete-row
+      {
+        padding:8px;
+        background-color: #f4f4f4;
+        border-bottom:1px solid #ccc;
+        font-weight:bold;
+      }
+      .ui-autocomplete-row:hover
+      {
+        background-color: #ddd;
+      }
+    </style>
+
 </head>
- 
 <body>
     <div class="logo">
         <img src="logo.png" height="90" width="90" alt="Kronos Games Logo">
@@ -51,10 +68,27 @@
 
     <h1 style="color:coral">Want Publisher Statistics? </h1>
     <form action="publisher_search_form.php" method="POST">
-            <input type="text" name="publisher_search" required="required"placeholder="Search">
+            <input type="text" name="publisher_search" id="csearch" required="required"placeholder="Search">
             <button type="submit" name="submit-search">Search</button>
         </form>
 
+        <script>
+            $(document).ready(function(){
+                $('#csearch').autocomplete({
+                source: "publisher_fetch_data.php",
+                minLength: 1,
+                select: function(event, ui)
+                {
+                    $('#csearch').val(ui.item.value);
+                }
+                }).data('ui-autocomplete')._renderItem = function(ul, item){
+                return $("<li class='ui-autocomplete-row'></li>")
+                    .data("item.autocomplete", item)
+                    .append(item.label)
+                    .appendTo(ul);
+                };
+            });
+        </script>
 <?php
     require('config2.php');
     if(isset($_POST['submit-search'])) {
