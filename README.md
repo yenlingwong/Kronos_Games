@@ -1,15 +1,20 @@
 # Kronos_Games (Databases and Web Services Project)
 
 Final Grade: 95%
-
+-----------------------------------------------------------------------------------------------------------------------------
 Kronos Games simulates a gaming website where administrators can insert records into the database for the following entities: Games, Publishers, Reviews, Installations and Uploads, and users can fetch and read those records in the respective search pages.
 
+-----------------------------------------------------------------------------------------------------------------------------
+
 The database-file folder contains the SQL file used to create the tables of the database, as well as the database Entity-Relation diagram. There is also a file containing example queries that can be used to extract specific data. The database base should be populated with dummy data before this can be done.
+
+-------------------------------------------------------------------------------------------------------------------------------
 
 The front end was designed using **HTML** and **CSS**, and the scripts can be found in the frontend-scripts folder.
 
 Home-Page: https://clabsql.clamv.jacobs-university.de/~schhabra/index.html and
 Imprint-Page: https://clabsql.clamv.jacobs-university.de/~schhabra/imprint.html
+-------------------------------------------------------------------------------------------------------------------------------
 
 The back end was programmed using **PHP** and **SQL**.
 Users are granted read-only access to the search pages (refer to config2.php) whereas administrators can access the maintenance page, and add records to the database. The authentication is done via username and password.
@@ -20,22 +25,17 @@ To access the maintenance page, please use the following credentials through thi
 Password: 12345**
 
 We also have pop-ups that show that the form has been successfully executed by redirecting to another page displaying a success message.
+-------------------------------------------------------------------------------------------------------------------------------------
 
 To view those records, please navigate to the search pages via this link -> http://clabsql.clamv.jacobs-university.de/~schhabra/search.html. The text fields in the search pages have an autocomplete feature where they fetch data dynamically from the database. This is accomplished using **JavaScript**, and the **JQuery UI** widget.
 
 We have 4 relationship links implemented in this assignment which are DOES, UPLOADS, GETS and IS_IN. Only IS_IN and UPLOADS have their own input page. The queries to insert data into the tables DOES and GETS are included in the installation and review input pages. This is because installations and reviews are weak entities and their exisistence depends on player and game. When an installation and review is being created the DOES and GETS tables are updated, therefore creating a relationship link.
 
-Sample Data: Email = Sid@gmail.com first_name = Sid last_name = Chhabra For the publisher search form, we offer the capability to search for the company’s name or tax ID and get a result containing publisher data.
-
-Sample Data: Search = Compcam For the game search form, we offer the capability to search for the name of the game, platforms games are available on and descriptions of games to get the details of the game as a result. In the result, the media attribute is a random number because we haven’t inserted media into the website.
-
-Sample Data: Search = The younger scrolls For the installations search form, we offer the capability to search for the graphics card and get the size of the games installed on a system running on that graphics card.
-
-Sample Data: Search = Intel Our submission for this week can be accessed via this link 
-
+-------------------------------------------------------------------------------------------------------------------------------------
 We were tasked to extract statistics from our access log and error log, and we chose **Python** for our parsing scripts. We used the file apache_log_server.py to filter out logs relevant to our group with the (~schhabra) tag, the program then writes said logs into a file called logs_accessed. We parse that file into our parsing scripts to extract the frequency of requests of distinct browsers, IP addresses, Page(URL)s and Dates into CSV files. Our data is available over the span of 4 days (11 Nov to 14 Nov 2021).
 
 Our extracted data from the access logs were presented into bar charts showcasing the access frequencies using jupyter notebook with **MATLAB** library in Python, the data is in the file Group 13 statistics.pdf in the repository.
+-------------------------------------------------------------------------------------------------------------------------------------
 
 We wrote a program that uses an external **API** to get a geographical location of an IP addresses of users who visited our web page. This program can be found under the name "map.py". We have utilised HTML to visualise the geographical location on a map display that was taken from Leaflet and used a marker to pinpoint to the exact location.
 
