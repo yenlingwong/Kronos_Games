@@ -2,7 +2,7 @@
 
 Final Grade: 95%
 
-Kronos Games simulates a gaming website where administrators can insert records into the database for the following entities: Games, Publishers, Reviews, Installations and Uploads.
+Kronos Games simulates a gaming website where administrators can insert records into the database for the following entities: Games, Publishers, Reviews, Installations and Uploads, and users can fetch and read those records in the respective search pages.
 
 UPDATE HW5:
 Our submission for assignment 5 consists of the CD document, the HTML files for the pages, the CSS file and the pictures we used for our site along with the logo. We have also added screenshots of our website functioning properly in CLAMV in case there are any problems. The screenshots can be found in the DBWS_A5 folder and are named "screenshot 1-5". We have uploaded these files both here on Github and on CLAMV. Our solution is also live and running on CLAMV and can be accessed using the following links:
