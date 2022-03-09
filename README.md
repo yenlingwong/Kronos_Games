@@ -1,4 +1,6 @@
-# Kronos_Games
+# Kronos_Games (Databases and Web Services Project)
+
+Final Grade: 95%
 
 UPDATE HW4:
 Our submission for the fourth assignment includes a folder with the following files: data.sql contains all the dummy data that we seeded into the databases. table.sql contains the latest changes we made to our CREATE TABLE statements. queries_group13.sql contains all the queries that we had to do as part of homework 4 and ran on the CLAMV server, which is part of the submission requirements. Lastly, Query Log Group 13.pdf is a pdf file that contains all the query logs outputted from the query with the corresponding images.
