@@ -14,6 +14,7 @@ The front end was designed using **HTML** and **CSS**, and the scripts can be fo
 
 Home-Page: https://clabsql.clamv.jacobs-university.de/~schhabra/index.html and
 Imprint-Page: https://clabsql.clamv.jacobs-university.de/~schhabra/imprint.html
+
 -------------------------------------------------------------------------------------------------------------------------------
 
 The back end was programmed using **PHP** and **SQL**.
@@ -25,6 +26,7 @@ To access the maintenance page, please use the following credentials through thi
 Password: 12345**
 
 We also have pop-ups that show that the form has been successfully executed by redirecting to another page displaying a success message.
+
 -------------------------------------------------------------------------------------------------------------------------------------
 
 To view those records, please navigate to the search pages via this link -> http://clabsql.clamv.jacobs-university.de/~schhabra/search.html. The text fields in the search pages have an autocomplete feature where they fetch data dynamically from the database. This is accomplished using **JavaScript**, and the **JQuery UI** widget.
@@ -35,6 +37,7 @@ We have 4 relationship links implemented in this assignment which are DOES, UPLO
 We were tasked to extract statistics from our access log and error log, and we chose **Python** for our parsing scripts. We used the file apache_log_server.py to filter out logs relevant to our group with the (~schhabra) tag, the program then writes said logs into a file called logs_accessed. We parse that file into our parsing scripts to extract the frequency of requests of distinct browsers, IP addresses, Page(URL)s and Dates into CSV files. Our data is available over the span of 4 days (11 Nov to 14 Nov 2021).
 
 Our extracted data from the access logs were presented into bar charts showcasing the access frequencies using jupyter notebook with **MATLAB** library in Python, the data is in the file Group 13 statistics.pdf in the repository.
+
 -------------------------------------------------------------------------------------------------------------------------------------
 
 We wrote a program that uses an external **API** to get a geographical location of an IP addresses of users who visited our web page. This program can be found under the name "map.py". We have utilised HTML to visualise the geographical location on a map display that was taken from Leaflet and used a marker to pinpoint to the exact location.
