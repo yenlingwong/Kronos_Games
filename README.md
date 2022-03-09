@@ -34,12 +34,5 @@ To view those records, please navigate to the search pages via this link -> http
 We have 4 relationship links implemented in this assignment which are DOES, UPLOADS, GETS and IS_IN. Only IS_IN and UPLOADS have their own input page. The queries to insert data into the tables DOES and GETS are included in the installation and review input pages. This is because installations and reviews are weak entities and their exisistence depends on player and game. When an installation and review is being created the DOES and GETS tables are updated, therefore creating a relationship link.
 
 -------------------------------------------------------------------------------------------------------------------------------------
-We were tasked to extract statistics from our access log and error log, and we chose **Python** for our parsing scripts. We used the file apache_log_server.py to filter out logs relevant to our group with the (~schhabra) tag, the program then writes said logs into a file called logs_accessed. We parse that file into our parsing scripts to extract the frequency of requests of distinct browsers, IP addresses, Page(URL)s and Dates into CSV files. Our data is available over the span of 4 days (11 Nov to 14 Nov 2021).
-
+We were tasked to extract statistics from our access log and error log, and we chose **Python** for our parsing scripts. We used the file apache_log_server.py to filter out logs relevant to our group with the (~schhabra) tag, the program then writes said logs into a file called logs_accessed. We parse that file into our parsing scripts to extract the frequency of requests of distinct browsers, IP addresses, Page(URL)s and Dates into CSV files. 
 Our extracted data from the access logs were presented into bar charts showcasing the access frequencies using jupyter notebook with **MATLAB** library in Python, the data is in the file Group 13 statistics.pdf in the repository.
-
--------------------------------------------------------------------------------------------------------------------------------------
-
-We wrote a program that uses an external **API** to get a geographical location of an IP addresses of users who visited our web page. This program can be found under the name "map.py". We have utilised HTML to visualise the geographical location on a map display that was taken from Leaflet and used a marker to pinpoint to the exact location.
-
-The webpage can be accessed through: https://clabsql.clamv.jacobs-university.de/~schhabra/map.html
