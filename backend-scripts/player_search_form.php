@@ -1,15 +1,37 @@
+<?php
+include('config2.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Kronos Games</title>
 </head>
- 
+
+
+<style type="text/css">
+      .ui-autocomplete-row
+      {
+        padding:8px;
+        background-color: #f4f4f4;
+        border-bottom:1px solid #ccc;
+        font-weight:bold;
+      }
+      .ui-autocomplete-row:hover
+      {
+        background-color: #ddd;
+      }
+    </style>
+
 <body>
     <div class="logo">
         <img src="logo.png" height="90" width="90" alt="Kronos Games Logo">
@@ -46,37 +68,53 @@
     </div>
     <form action="player_search_form.php" method="POST">
         <br><br>
-        <h1 style="color:coral">Want User Statistics? Enter the email,first name and last name attached to the account! </h1>
-        <input type="text" name="email" required="required" placeholder="Email"><br>
-        <input type="text" name="first_name" required="required" placeholder="First Name"><br>
-        <input type="text" name="last_name" required="required" placeholder="Last Name"><br>
+        <h1 style="color:coral">Want User Statistics? Enter the email attached to the account! </h1>
+        <input type="text" name="email" id="esearch" class="form-control" required="required" placeholder="Email" autocomplete="off"><br>
         <button type="submit" name="submit-search">Search</button>
     </form>
+
+    <script>
+            $(document).ready(function(){
+                $('#esearch').autocomplete({
+                source: "player_fetch_data.php",
+                minLength: 1,
+                select: function(event, ui)
+                {
+                    $('#esearch').val(ui.item.value);
+                }
+                }).data('ui-autocomplete')._renderItem = function(ul, item){
+                return $("<li class='ui-autocomplete-row'></li>")
+                    .data("item.autocomplete", item)
+                    .append(item.label)
+                    .appendTo(ul);
+                };
+            });
+        </script>
 </body>
 
 </html>
 
+
+
 <?php
-require('config2.php');
+require('config.php');
 if (isset($_POST['submit-search'])) {
+    $email = array();
+
     $search1 = mysqli_real_escape_string($conn, $_POST['email']);
-    $search2 = mysqli_real_escape_string($conn, $_POST['first_name']);
-    $search3 = mysqli_real_escape_string($conn, $_POST['last_name']);
-    $sql = "SELECT * FROM player WHERE email LIKE '%$search1%' AND  first_name LIKE '%$search2%' AND last_name LIKE '%$search3%'";
+    $sql = "SELECT * FROM player WHERE email LIKE '%$search1%'";
 
     $result = mysqli_query($conn, $sql);
     $queryResults = mysqli_num_rows($result);
 
     if ($queryResults > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
-            echo "<a href='player_result.php?email=".$row['email']."'><div class='game-box'>
-            <h3>".$row['email']."</h3>
+            echo "<a href='player_result.php?email=" . $row['email'] . "'><div class='game-box'>
+            <h3>" . $row['email'] . "</h3>
         </a></div>";
         }
-    } 
-    else {
+    } else {
         echo 'There are no results matching your search';
     }
 }
-
 ?>
