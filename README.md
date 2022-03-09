@@ -2,8 +2,7 @@
 
 Final Grade: 95%
 
-UPDATE HW4:
-Our submission for the fourth assignment includes a folder with the following files: data.sql contains all the dummy data that we seeded into the databases. table.sql contains the latest changes we made to our CREATE TABLE statements. queries_group13.sql contains all the queries that we had to do as part of homework 4 and ran on the CLAMV server, which is part of the submission requirements. Lastly, Query Log Group 13.pdf is a pdf file that contains all the query logs outputted from the query with the corresponding images.
+Kronos Games simulates a gaming website where administrators can insert records into the database for the following entities: Games, Publishers, Reviews, Installations and Uploads.
 
 UPDATE HW5:
 Our submission for assignment 5 consists of the CD document, the HTML files for the pages, the CSS file and the pictures we used for our site along with the logo. We have also added screenshots of our website functioning properly in CLAMV in case there are any problems. The screenshots can be found in the DBWS_A5 folder and are named "screenshot 1-5". We have uploaded these files both here on Github and on CLAMV. Our solution is also live and running on CLAMV and can be accessed using the following links:
